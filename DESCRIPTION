@@ -1,0 +1,11 @@
+Package: rdough
+Type: Package
+Title: Keep Track of Finances
+Version: 0.1
+Author: Artur Rego Costa <arturregocosta@gmail.com>
+Maintainer: Artur Rego Costa <arturregocosta@gmail.com>
+Description: This package allows you to record incomes and outcomes of money in
+    different accounts, currencies and life situations.
+License: Not sure
+LazyData: TRUE
+RoxygenNote: 5.0.1

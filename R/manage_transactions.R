@@ -100,9 +100,9 @@ erase_transaction <- function(n = 1, type = "expenses"){
 
   transactions <- transactions[-n,]
 
-  transactions <- switch(type,
-                         backup_expenses(),
-                         backup_incomes())
+  switch(type,
+         backup_expenses(),
+         backup_incomes())
 
   switch(type,
          write.table(transactions, file = "expenses.txt", quote = F, sep = "\t", row.names = F),

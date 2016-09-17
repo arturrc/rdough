@@ -27,7 +27,7 @@ Encoding: UTF-8
 RnwWeave: knitr
 LaTeX: pdfLaTeX' > ", name, ".Rproj"))
 
-    info <- list(rdough_version = 0.2, date_create = Sys.Date(), last_update = Sys.Date(), accounts = list(accounts = "main", currencies = "EUR"), expenses_defaults = list(date = "today", value = 1, account = "main", situation = "groningen", type = "food", subtype = "groceries", obs = ""), incomes_defaults = list(date = "today", value = 1000, account = "main", situation = "groningen", source = "meme_scholarship", obs = ""))
+    info <- list(rdough_version = 0.3, date_create = Sys.Date(), last_update = Sys.Date(), accounts = list(accounts = "main", currencies = "EUR"), expenses_defaults = list(date = "today", value = 1, account = "main", situation = "groningen", type = "food", subtype = "groceries", obs = ""), incomes_defaults = list(date = "today", value = 1000, account = "main", situation = "groningen", source = "meme_scholarship", obs = ""))
     save(info, file = "info.RData")
 
     system("echo 'date\tvalue\taccount\tsituation\ttype\tsubtype\tobs' > expenses.txt")

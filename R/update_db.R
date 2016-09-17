@@ -8,5 +8,10 @@ update_db <- function(){
     info$rdough_version <- 0.2
     save(info, file = "info.RData")
     cat("v0.1 --> v0.2\tOK\n")
-  } else {stop("ERROR! Unknown version!")}
+  }
+  if(info$rdough_version == 0.2){
+    info$rdough_version <- 0.3
+    save(info, file = "info.RData")
+    cat("v0.2 --> v0.3\tOK\n")
+  }
 }

@@ -4,7 +4,13 @@
 #' @return Dataframe with record of expenses of the current database.
 #' @export
 read_expenses <- function(){
-  return(read.table("expenses.txt", header = T, sep = "\t"))
+  transactions <- read.table("expenses.txt", header = T, sep = "\t")
+
+  if(nrow(transactions) != 0){
+    transactions <- read.table("expenses.txt", header = T, sep = "\t", colClasses = c("character", "numeric", "character", "character", "character", "character", "character"))
+  }
+
+  return(transactions)
 }
 
 #' Read incomes
@@ -13,7 +19,13 @@ read_expenses <- function(){
 #' @return Dataframe with record of incomes of the current database.
 #' @export
 read_incomes <- function(){
-  return(read.table("incomes.txt", header = T, sep = "\t"))
+  transactions <- read.table("incomes.txt", header = T, sep = "\t")
+
+  if(nrow(transactions) != 0){
+    transactions <- read.table("incomes.txt", header = T, sep = "\t", colClasses = c("character", "numeric", "character", "character", "character", "character"))
+  }
+
+  return(transactions)
 }
 
 #' Add expense
@@ -108,5 +120,6 @@ erase_transaction <- function(n = 1, type = "expenses"){
          write.table(transactions, file = "expenses.txt", quote = F, sep = "\t", row.names = F),
          write.table(transactions, file = "incomes.txt", quote = F, sep = "\t", row.names = F))
 
-  print("Transaction(s) successfully erased from current database.")
+  cat("Transaction(s) successfully erased from current database.\n\nLast transaction in record:\n\n")
+  print(tail(transactions, 1))
 }
